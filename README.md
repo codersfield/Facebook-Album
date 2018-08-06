@@ -3,4 +3,4 @@ Sign In with Facebook and you can watch your all picture and can download Zip fi
 
 Create account on http://developers.facebook.com/apps and set app id and secret key in config.php 
 
-Start devloping :) 
+Keep devloping  :) 
