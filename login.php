@@ -25,7 +25,6 @@
     <div class="container" style="margin-top:100px">
     <div class="row justify-content-center">
     <div class="col-md-6 col-md-offset-3" align="center">
-    <img src="assets/logo.png" width="10%" height="60%">
-    <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In with Facebook" class="btn btn-primary">
+    <img src="assets/logo.png" onclick="window.location = '<?php echo $loginURL ?>';" />
 </body>
 </html>

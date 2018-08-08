@@ -22,8 +22,9 @@
 
 	$response = $FB->get("/me?fields=id, first_name, last_name, email, picture.type(large),photos{link,webp_images},videos{permalink_url},posts{full_picture}", $accessToken);
     $userData = $response->getGraphNode()->asArray();
-    echo "<pre>";
-    var_dump($userData);
+	//echo "<pre>";
+	// To watch Graph response of UserData 
+   // var_dump($userData);
 	$_SESSION['userData'] = $userData;
 	$_SESSION['access_token'] = (string) $accessToken;
 	header('Location: index.php');
