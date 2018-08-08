@@ -46,7 +46,7 @@
 					</tbody>
 				</table>
 			</div>
-			
+			<!--Add loop here-->
 			<img src="<?php echo $_SESSION['userData']['posts'][0]['full_picture'] ?>" width="300px" height="300px">
 			<img src="<?php echo $_SESSION['userData']['posts'][1]['full_picture'] ?>" width="300px" height="300px">
 		</div>
