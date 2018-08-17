@@ -6,7 +6,7 @@
 		exit();
 	}
 
-	$redirectURL = "http://localhost/fb-callback.php";
+	$redirectURL = "http://localhost/FBAlbum/Facebook-Album/fb-callback.php";
 	$permissions = ['email'];
     $loginURL = $helper->getLoginUrl($redirectURL, $permissions);
 ?>
