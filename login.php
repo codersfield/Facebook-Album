@@ -20,11 +20,24 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css'>
+
+      <link rel="stylesheet" href="css/back.css">
+    
+</head>
 <body>
-    <div class="container" style="margin-top:100px">
-    <div class="row justify-content-center">
-    <div class="col-md-6 col-md-offset-3" align="center">
-    <img src="assets/logo.png" onclick="window.location = '<?php echo $loginURL ?>';" />
+<div id="large-header" class="large-header">
+  <canvas id="demo-canvas"></canvas>
+    <h1 class="main-title">Connect <span class="thin" onclick="window.location = '<?php echo $loginURL ?>';"><i class="fa fa-facebook">acebook</i></span></h1>
+   
+</div>
+  <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+    <script  src="js/index.js"></script>    
+   
 </body>
 </html>
