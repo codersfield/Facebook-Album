@@ -5,4 +5,4 @@ Create account on http://developers.facebook.com/apps and set app id and secret 
 
 Keep devloping  :) 
 
-Note: Facebook app review still not approved you can run it in Dev Mode.
+Note: Facebook app still not approved you can run it in Dev Mode.
