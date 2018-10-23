@@ -1,4 +1,6 @@
 {
     "name": "dev/facebook-album",
-    "require": {}
+    "require": {
+        "facebook/graph-sdk": "^5.6"
+    }
 }
