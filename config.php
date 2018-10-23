@@ -12,3 +12,4 @@ $dotenv = new Dotenv( __DIR__ );
 $dotenv->load();
 
 require_once "include/FacebookService.php";
+$facebookService = new FacebookService();

@@ -1,7 +1,9 @@
 <?php
 require_once "config.php";
 
+$helper = $facebookService->getRedirectHelper();
 try {
+
 	$accessToken = $helper->getAccessToken();
 } catch ( \Facebook\Exceptions\FacebookResponseException $e ) {
 	echo "Response Exception: " . $e->getMessage();
@@ -16,9 +18,16 @@ if ( ! $accessToken ) {
 	exit();
 }
 
-$oAuth2Client = $FB->getOAuth2Client();
+$oAuth2Client = $facebookService->getOAuth2Client();
 if ( ! $accessToken->isLongLived() ) {
-	$accessToken = $oAuth2Client->getLongLivedAccessToken( $accessToken );
+	try {
+		$accessToken = $oAuth2Client->getLongLivedAccessToken( $accessToken );
+		$_SESSION['access_token'] = $accessToken;
+		header("Location:index.php");
+		exit;
+	} catch ( \Facebook\Exceptions\FacebookSDKException $e ) {
+		// Unable to get long-lived token
+	}
 }
 
 $response = $FB->get( "/me?fields=id, first_name, last_name, email, picture.type(large),photos{link,webp_images},videos{permalink_url},posts{full_picture}", $accessToken );

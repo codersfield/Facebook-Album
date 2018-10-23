@@ -5,10 +5,7 @@ if ( isset( $_SESSION['access_token'] ) ) {
 	header( 'Location: index.php' );
 	exit();
 }
-
-$redirectURL = "http://localhost/FBAlbum/Facebook-Album/fb-callback.php";
-$permissions = [ 'email' ];
-$loginURL    = $helper->getLoginUrl( $redirectURL, $permissions );
+$loginURL = $facebookService->getLoginUrl();
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,8 +28,12 @@ $loginURL    = $helper->getLoginUrl( $redirectURL, $permissions );
 <body>
 <div id="large-header" class="large-header">
     <canvas id="demo-canvas"></canvas>
-    <h1 class="main-title">Connect <span class="thin" onclick="window.location = '<?php echo $loginURL ?>';"><i class="fa fa-facebook">acebook</i></span></h1>
-
+    <h1 class="main-title">
+        Connect
+        <span class="thin" onclick="window.location = '<?php echo $loginURL ?>';">
+            <i class="fa fa-facebook"></i>acebook
+        </span>
+    </h1>
 </div>
 <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
 <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>

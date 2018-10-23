@@ -5,6 +5,8 @@ if ( ! isset( $_SESSION['access_token'] ) ) {
 	header( 'Location: login.php' );
 	exit();
 }
+
+$facebookUser = $facebookService->getUser();
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +22,7 @@ if ( ! isset( $_SESSION['access_token'] ) ) {
 <div class="container" style="margin-top: 100px">
     <div class="row justify-content-center">
         <div class="col-md-3">
-            <img src="<?php echo $_SESSION['userData']['picture']['url'] ?>">
+            <img src="<?php echo $facebookUser->getPicture()->getUrl() ?>" alt="<?php echo $facebookUser->getName(); ?>">
             <br>
             <br>
             <a class="btn btn-primary" href="/logout.php">
@@ -32,33 +34,37 @@ if ( ! isset( $_SESSION['access_token'] ) ) {
                 <tbody>
                 <tr>
                     <td>ID</td>
-                    <td><?php echo $_SESSION['userData']['id'] ?></td>
+                    <td><?php echo $facebookUser->getId(); ?></td>
                 </tr>
                 <tr>
                     <td>First Name</td>
-                    <td><?php echo $_SESSION['userData']['first_name'] ?></td>
+                    <td><?php echo $facebookUser->getFirstName(); ?></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><?php echo $_SESSION['userData']['last_name'] ?></td>
+                    <td><?php echo $facebookUser->getLastName(); ?></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><?php echo $_SESSION['userData']['email'] ?></td>
+                    <td><?php echo $facebookUser->getEmail(); ?></td>
                 </tr>
 
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="row">
         <!--Add loop here-->
 		<?php
+		$userFeed = $facebookService->getFeed();
+		/*
 		for ( $i = 2; $i < count( $_SESSION['userData']['posts'] ); $i ++ ) {
 			$image = $_SESSION['userData']['posts'][ $i ]['full_picture'];
 			print"<img src=\"$image\" width=\"300\" style=\"margin:50px\"  height=\"300\"\/>";
 
 		}
+		*/
 		?>
-
     </div>
 </div>
 </body>
