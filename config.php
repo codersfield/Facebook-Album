@@ -1,16 +1,14 @@
 <?php
-session_start();
+
+use Dotenv\Dotenv;
+
+if ( session_status() === PHP_SESSION_NONE ) {
+	session_start();
+}
 
 require_once "vendor/autoload.php";
 
-try {
-	$FB = new \Facebook\Facebook( [
-		'app_id'                => '806834059419905',
-		'app_secret'            => '88863b2c7c655405a574193d75350e75',
-		'default_graph_version' => 'v3.1'
-	] );
-} catch ( \Facebook\Exceptions\FacebookSDKException $e ) {
-	// should handle error
-}
+$dotenv = new Dotenv( __DIR__ );
+$dotenv->load();
 
-$helper = $FB->getRedirectLoginHelper();
+require_once "include/FacebookService.php";

@@ -10,8 +10,7 @@ if ( ! isset( $_SESSION['access_token'] ) ) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Profile</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
@@ -24,9 +23,9 @@ if ( ! isset( $_SESSION['access_token'] ) ) {
             <img src="<?php echo $_SESSION['userData']['picture']['url'] ?>">
             <br>
             <br>
-            <button type="button" class="btn btn-primary"><a href="logout.php">
-                    Log out</a>
-            </button>
+            <a class="btn btn-primary" href="/logout.php">
+                Logout
+            </a>
         </div>
         <div class="col-md-9">
             <table class="table table-hover table-bordered">
