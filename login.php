@@ -30,9 +30,9 @@ $loginURL = $facebookService->getLoginUrl();
     <canvas id="demo-canvas"></canvas>
     <h1 class="main-title">
         Connect
-        <span class="thin" onclick="window.location = '<?php echo $loginURL ?>';">
+        <a href="<?php echo $loginURL; ?>">
             <i class="fa fa-facebook"></i>acebook
-        </span>
+        </a>
     </h1>
 </div>
 <script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>

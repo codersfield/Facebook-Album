@@ -22,9 +22,10 @@ class FacebookService {
 	}
 
 	public function getLoginUrl() {
-		$loginUrl = $this->getRedirectHelper()->getLoginUrl( getenv( "FB_REDIRECT_URI" ), [
+		$redirectUri = getenv( 'FB_REDIRECT_URI' );
+		$loginUrl = $this->getRedirectHelper()->getLoginUrl( $redirectUri, [
 			'email',
-			'user_feed'
+			'user_posts'
 		] );
 
 		return $loginUrl;
